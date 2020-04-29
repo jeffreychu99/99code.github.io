@@ -1,0 +1,32 @@
+# This is the default format. 
+# For more see: https://github.com/mojombo/jekyll/wiki/Permalinks
+# permalink: /:categories/:year/:month/:day/:title 
+permalink: /blog/:year/:month/:title.html 
+include: ['.htaccess']
+exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md", "CNAME", "Gemfile", "Gemfile.lock"]
+markdown: redcarpet
+highlights: pygments
+lsi: false
+timezone: Asia/Shanghai
+safe: false
+
+JB :
+  ASSET_PATH : http://blog.99code.cc/assets
+  IMAGE_PATH : http://blog.99code.cc/images
+# auto: true # deprecated
+
+# Themes are encouraged to use these universal variables 
+# so be sure to set them if your theme uses them.
+#
+url: http://blog.99code.cc
+title: jeffreychu
+tagline: On The Way to Philistinism...
+about: jeffreychu
+author:
+  name: jeffreychu
+  email: zhujf21st@qq.com
+  github: jeffreychu99
+  #twitter: 5CJ
+  #facebook: ichenjun
+  #googleplus: +ChenJun
+  #feedburner : Zhu8/github
