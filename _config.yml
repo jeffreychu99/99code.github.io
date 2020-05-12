@@ -2,11 +2,11 @@
 #   Main Configs   #
 # ---------------- #
 baseurl:
-url: http://blog.99code.cc
+url: http://www.99code.cc
 date_format: "ordinal"
-title: 码志
-subtitle: "程序员"
-description: "程序员"
+title: 大飞的技术博客
+subtitle: "jeffreychu"
+description: "记录技术的点点滴滴"
 keywords: 
 timezone: Asia/Shanghai
 encoding: "utf-8"

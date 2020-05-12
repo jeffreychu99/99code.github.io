@@ -1,5 +1,5 @@
 // https://github.com/ghiculescu/jekyll-table-of-contents
-// Updated by http://mazhuang.org
+// Updated by http://99code.cc
 (function($){
   $.fn.toc = function(options) {
     var defaults = {
