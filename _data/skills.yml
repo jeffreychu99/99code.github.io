@@ -2,18 +2,39 @@
   keywords:
       - Java
       - C++
+      - Node.js
       - Python
       - Design Patterns
+
+- name: HTML Developer Keywords
+  keywords:
+      - HTML
+      - CSS
+      - JavaScript
+      - Vue.js
+      - Antd Design for Vue
+
 
 - name: Mobile Developer Keywords
   keywords:
       - Android
+      - Weixin miniprogram
       - Reverse Engineering
 
 - name: Windows Developer Keywords
   keywords:
       - Win32 SDK
       - DuiLib
-      - WTL
-      - COM
-      - WinDbg
+      - MFC
+
+- name: Database Developer Keywords
+  keywords:
+      - Mysql
+      - Redis
+      - MongoDB
+      - Sql Server
+
+- name: Micro Service Developer Keywords
+  keywords:
+      - SpringBoot
+      - SpringCloud
