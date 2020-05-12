@@ -124,8 +124,8 @@ gitment:
 gitalk:
     owner: jeffreychu99
     repo: blog-comments
-    clientID: a6909470bf14e7121090
-    clientSecret: b114e6421116b43d316b26b5e4053e1e19261bc1
+    clientID: 52c28d055223c383bff9
+    clientSecret: 7265120a4762f1b6e04e263b8c524dd969ffb43a
 # 在使用其它评论组件时可点击显示 Disqus
 lazy_load_disqus : false
 
