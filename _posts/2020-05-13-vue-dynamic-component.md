@@ -55,3 +55,133 @@ keywords: Vue.js, component
 vue create hello-vue
 
 ## 定义组件
+
+```javascript
+<template>
+    <div>
+        <input type="text" v-model="name" />
+        <input type="text" v-model="age" />
+        <button @click="changeName">click</button>
+    </div>
+</template>
+
+<script>
+export default {
+    name: 'MyControl',
+    data() {
+        return {
+            name: "jefrey",
+            age: 10
+        }
+    },
+    methods: {
+        changeName() {
+            this.name = "another name"
+        }
+    }
+}
+</script>
+```
+
+click按钮事件改变的是该组件内文本框的值，对其它组件没有影响，互不干涉，很好的说明了组件的封装性。
+
+## 应用组件
+
+```javascript
+<template>
+  <div id="app">
+    <button @click="add">动态增加</button>
+    <button @click="get">获取组件数据</button>
+    <MyControl v-for="componet in components" :ref='componet.id' :key= 'componet.id'/>
+  </div>
+</template>
+
+<script>
+import MyControl from './components/MyControl'
+
+export default {
+  name: 'App',
+  components: {
+    MyControl
+  },
+  data() {
+    return {
+      components: [{
+        id: 1
+      }],
+      id: 1
+    }
+  },
+  methods: {
+    add() {
+      this.components.push({
+        id: ++this.id
+      })
+    },
+    get() {
+      for (let refIndex in this.$refs) {
+        let ref = this.$refs[refIndex]
+        console.log(ref[0].name)
+        console.log(ref[0].age)
+      }     
+    }
+  }
+}
+</script>
+
+<style>
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
+</style>
+
+```
+
+关键的两段代码如下所示
+
+```javascript
+// 遍历数据，动态创建组件列表
+<MyControl v-for="componet in components" :ref='componet.id' :key= 'componet.id'/>
+```
+
+```javascript
+// 获取组件的数据
+for (let refIndex in this.$refs) {
+    let ref = this.$refs[refIndex]
+    console.log(ref[0].name)
+    console.log(ref[0].age)
+}
+```
+
+从下动图可以看出，组件内部数据都是独立的，获取组件数据按钮可以遍历出各个组件的数据内容，这样在提交后台的时候，前端javascript就可以很方便的整合数据了。
+
+![](/images/posts/vue-dynamic-component/record.gif)
+
+
+```javascript
+// 获取组件的数据
+for (let refIndex in this.$refs) {
+    let ref = this.$refs[refIndex]
+    console.log(ref[0].name)
+    console.log(ref[0].age)
+}
+```
+
+## 获取组件
+
+整合数据提交到后台，如下代码所示，遍历完成后就可以直接将data按照AJAX等方式提交给后台。
+
+```javascript
+// 待提交的数据
+let data = []
+for (let refIndex in this.$refs) {
+    let ref = this.$refs[refIndex]
+
+    data.push({name: ref[0].name, age: ref[0].age})
+}
+```
