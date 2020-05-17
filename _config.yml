@@ -65,6 +65,10 @@ navs:
     label: 维基
 
   -
+    href: /columns/
+    label: 专栏
+
+  -
     href: /links/
     label: 链接
 
