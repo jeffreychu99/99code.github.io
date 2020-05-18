@@ -106,6 +106,9 @@ collections:
     wiki:
         output: true
         permalink: /wiki/:path/
+    columns:
+        output: true
+        permalink: /columns/:path/
 
 # ---------------- #
 #      Comments    #
